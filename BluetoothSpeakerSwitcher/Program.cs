@@ -7,7 +7,8 @@ namespace BluetoothSpeakerSwitcher
     {
         static void Main(string[] args)
         {
-            int.TryParse(args[0], out var dropDown);
+            if (args.Length < 1) return;
+            if(!int.TryParse(args[0], out var dropDown)) return;
             new Process
             {
                 StartInfo =
